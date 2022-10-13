@@ -8,7 +8,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom"
 import Counter from './features/counter/Counter'
 
 import Home from './components/Home';
-import Patients from './components/Patients';
+import Patients from './patients/Patients';
 
 function App() {
   return (

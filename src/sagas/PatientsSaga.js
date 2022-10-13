@@ -1,20 +1,21 @@
-import { call, put } from 'redux-saga/effects'
+import { call, put, takeEvery } from 'redux-saga/effects'
 import { getListOfPatients } from '../api/patientsApi'
 import { PATIENTS, ERRORS } from '../types'
+import { getPatients } from '../patients/state/patientsSlice'
 
 function* getListOfPatientsSaga() {
   try {
-    const res = yield call(getListOfPatients)
-    console.log("res saga", res);
+    const { data } = yield call(getListOfPatients)
     yield put({type: PATIENTS.GET_PATIENTS_SUCCESS})
+    yield put(getPatients(data))
   } catch (error) {
     console.log(error);
-    yield put(ERRORS.NET_ERROR)
+    yield put({ type: ERRORS.NET_ERROR})
   }
 }
 
 function* patientsSaga() {
-
+  yield takeEvery(PATIENTS.GET_PATIENTS, getListOfPatientsSaga)
 }
 
 export default patientsSaga;
