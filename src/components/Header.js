@@ -14,7 +14,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import Button from "@mui/material/Button"
+import Link from '@mui/material/Link'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -164,9 +164,12 @@ export default function Header() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            PRMS
+            <Link
+              color='inherit'
+              underline='none'
+              href='/'            
+            >PRMS</Link>
           </Typography>
-          
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -176,7 +179,13 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Typography>Patients</Typography>   
+          <Typography>
+            <Link
+              color='inherit'
+              underline='none'
+              href='/patients'
+            >Patients</Link>
+          </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
