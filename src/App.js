@@ -7,7 +7,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom"
 //  for testing
 import Counter from './features/counter/Counter'
 
-import Home from './components/Home';
+import Home from './Home/Home';
 import Patients from './patients/Patients';
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <Header/>
-        <Counter/>
         <Routes>
           <Route index element={ <Home/> }/>
           <Route path='patients' element={<Patients/>}/>
