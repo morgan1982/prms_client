@@ -35,11 +35,11 @@ function Patients() {
       {renderPatients()}
       <Typography variant="h3">Patients</Typography>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} aria-label="patients table">
           <TableHead>
             <TableRow>
-              <TableCell>First name</TableCell>
-              <TableCell align="right">last name</TableCell>
+              <TableCell >First name</TableCell>
+              <TableCell align="right" style={{ fontWeight: 'bold' }}>last name</TableCell>
               <TableCell align="right">age</TableCell>
               <TableCell align="right">date of birth</TableCell>
               <TableCell align="right">gender</TableCell>

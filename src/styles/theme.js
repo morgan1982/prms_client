@@ -1,7 +1,7 @@
 import React from 'react'; 
 import PropTypes from 'prop-types';
 
-import { createTheme } from "@mui/material/styles"
+import { createTheme, withTheme } from "@mui/material/styles"
 import { Link as RouterLink } from 'react-router-dom';
 
 
@@ -29,9 +29,32 @@ export const theme = createTheme({
       defaultProps: {
         component: LinkBehavior,
       },
-      MuiButtonBase: {
-        defaultProps: {
-          LinkComponent: LinkBehavior
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        LinkComponent: LinkBehavior
+      }
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        MuiTableCell: {
+          color: 'white',
+          
+        },
+        root: {
+          "& .MuiTableCell-root": {
+            fontWeight: 'bold',
+            // color: 'white',
+            // backgroundColor: 'red'
+          },
+          '&&': {
+            // backgroundColor: 'green',
+            '&&': {
+              color: 'white',
+            },
+          },
+          fontWeight: 'bold',
+          color: 'white',
         }
       }
     }
